@@ -1,0 +1,20 @@
+@import 'bootstrap/scss/bootstrap.scss';
+@import "variables";
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.uh__crm-wrapper {
+    background: $body-bg-color;
+    min-height: 100vh;
+    padding-top: 108px;
+    padding-left: 304px;
+    position: relative;
+
+    @import "./common/common";
+}
