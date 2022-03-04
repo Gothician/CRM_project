@@ -1,0 +1,134 @@
+.table-list-component {
+    &-wrapper {
+        table {
+            margin-bottom: 0px;
+
+            thead {
+                box-shadow: 0px 0px 17px -11px rgba(0, 0, 0, 0.4);
+
+                tr {
+                    &:hover {
+                        background-color: transparent;
+                    }
+
+                    th {
+                        border-top: 2px solid $green;
+                        padding: 12px 9px;
+                        color: #666666;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            caption {
+                margin-top: 12px;
+                border-top: 1px solid 1px solid rgba(227, 227, 227, 0.25);
+                padding-left: 12px;
+            }
+        }
+
+        tbody {
+            &::after,
+            &::before {
+                content:"@";
+                display:block;
+                line-height:10px;
+                text-indent:-99999px;
+            }
+        }
+
+        .table-footer {
+            border-bottom: 2px solid $green;
+            box-shadow: 0px -7px 15px -13px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+
+            .statistic {
+                color: $grey;
+            }
+
+            .per-page-wrapper {
+                color: $grey;
+
+                .item {
+                    margin-left: 8px;
+                    color: $green;
+                    cursor: pointer;
+
+                    &.active {
+                        cursor: default;
+                        color: $grey;
+                    }
+
+                    & + .item {
+                        &::before {
+                            content: '/';
+                            display: inline-block;
+                            margin-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        svg {
+            &.website,
+            &.status {
+                color: $green;
+
+                &.disabled {
+                    color: #e3e3e3;
+                }
+            }
+
+            &.website {
+                cursor: pointer;
+                font-size: 18px;
+            }
+
+            &.primary {
+                font-size: 15px;
+                color: $default-green;
+                opacity: 0.72;
+            }
+        }
+
+        tr {
+            &:hover {
+                background-color: rgba(117, 204, 107, .07);
+            }
+        }
+
+        td {
+            vertical-align: baseline;
+
+
+            &.td {
+                &-status {
+                    text-align: center;
+                    width: 32px;
+                }
+
+                &-controls {
+                    text-align: right;
+
+                    .btn-group {
+                        button {
+                            padding-left: 18px;
+                            padding-right: 18px;
+                        }
+                    }
+                }
+
+                &-image {
+                    width: 90px;
+                }
+
+                &-website {
+                    width: 48px;
+                }
+            }
+        }
+    }
+}

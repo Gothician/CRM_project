@@ -1,0 +1,16 @@
+@import "default-linear-graient";
+@import "header";
+@import "aside-menu";
+@import "breadcrumb";
+@import "pagination";
+
+.badge-success {
+    background-color: $green;
+}
+
+.title-page {
+    font-size: 32px;
+    font-weight: 300;
+    margin: 0px 0px 18px;
+    cursor: default;
+}

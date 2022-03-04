@@ -1,0 +1,68 @@
+@import '../components/vawe-animate';
+
+.login-page {
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+
+    .vawe-animate {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 0;
+    }
+
+    .form-wrapper {
+        position: relative;
+        z-index: 10;
+        padding: 60px 40px;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, .24);
+        width: 480px;
+        max-width: 100%;
+        background: $white;
+
+        h4 {
+            font-size: 40px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            position: relative;
+
+            label {
+                color: $grey;
+            }
+
+            .error {
+                color: $red;
+                font-size: 9px;
+                position: absolute;
+                display: block;
+                bottom: -5px;
+                right: 9px;
+                background: $white;
+                padding: 0px 8px;
+            }
+        }
+
+        .btn-danger {
+            padding: 8px 40px;
+            color: $white;
+        }
+
+        .text-right {
+            a {
+                color: $grey;
+                font-size: 12px;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

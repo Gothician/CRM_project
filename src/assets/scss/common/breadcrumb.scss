@@ -1,0 +1,36 @@
+.breadcrumb-case {
+    margin-top: 8px;
+    margin-bottom: 24px;
+
+    .breadcrumb-item {
+        a {
+            color: $default-green;
+
+            & > svg {
+                margin-right: 4px;
+            }
+        }
+
+        & + .breadcrumb-item {
+            &::before {
+                content: '→';
+                color: $aside-menu__wrapper_cat_text_color;
+            }
+        }
+
+        span {
+            cursor: default;
+            color: $aside-menu__wrapper_cat_text_color;
+
+            &.category {
+                color: $default-green;
+                margin-left: 4px;
+                display: inline-block;
+
+                & > svg {
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+}

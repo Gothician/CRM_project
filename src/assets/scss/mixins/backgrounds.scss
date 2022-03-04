@@ -1,0 +1,12 @@
+@mixin bg-default-gradient($color1: $default-green, $color2: $green){
+    background: $color1;
+    background: -webkit-linear-gradient(to right, $color1 0%, $color2 100%);
+    background: -moz-linear-gradient(to right, $color1 0%, $color2 100%);
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
+@mixin bg-default-ligten-gradient($color1, $color2, $procent){
+    background: lighten($color1, $procent);
+    background: -webkit-linear-gradient(to right, lighten($color1, $procent) 0%, lighten($color2, $procent) 100%);
+    background: -moz-linear-gradient(to right, lighten($color1, $procent) 0%, lighten($color2, $procent) 100%);
+    background: linear-gradient(to right, lighten($color1, $procent) 0%, lighten($color2, $procent) 100%);
+}

@@ -1,0 +1,18 @@
+.btn-success,
+.badge-success {
+    color: $white;
+}
+
+.btn-outline-primary,
+.btn-success {
+    &:not(:disabled),
+    &:not(.disabled) {
+        &:active {
+            color: $white !important;
+        }
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

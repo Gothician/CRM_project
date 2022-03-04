@@ -1,0 +1,25 @@
+.pagination {
+    margin-top: 18px;
+
+    .page-item {
+        &.disabled {
+            .page-link {
+                color: $grey;
+                opacity: 0.5;
+            }
+        }
+
+        &.active {
+            .page-link {
+                color: $white;
+                background: $green;
+            }
+        }
+
+        .page-link {
+            border: none;
+            font-size: 13px;
+            color: $green;
+        }
+    }
+}

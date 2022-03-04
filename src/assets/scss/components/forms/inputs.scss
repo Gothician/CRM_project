@@ -1,0 +1,86 @@
+.text-field {
+	width: 100%;
+	background: white;
+	border-radius: 8px;
+	position: relative;
+	margin-bottom: 12px;
+
+	.limit {
+		position: absolute;
+		font-size: 10px;
+		color: $red;
+		top: 9px;
+		right: 9px;
+	}
+
+	.input-wrapper {
+		min-height: 64px;
+		padding: 20px 15px;
+
+		.label {
+			color: $grey;
+			font-size: 14px;
+			position: absolute;
+			z-index: 1;
+			top: -50%;
+			bottom: -50%;
+			margin: auto;
+			height: 20px;
+			transition: all .24s;
+		}
+
+		.error {
+			color: $red;
+		    font-size: 9px;
+		    position: absolute;
+		    display: block;
+		    bottom: 3px;
+		    right: 9px;
+		}
+
+		textarea,
+		input {
+			font-size: 14px;
+			border: none;
+			background: transparent;
+			box-shadow: none;
+			outline: none;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			z-index: 2;
+			transition: all .24s;
+			padding: 0px;
+
+			&.with-text,
+			&:focus {
+				top: 8px;
+
+				& + .label {
+					top: -70%;
+					bottom: -30%;
+					font-size: 12px;
+				}
+			}
+		}
+
+		textarea {
+			resize: none;
+			min-height: 63px;
+			line-height: 1.5;
+			padding: 0px;
+			padding: 0px;
+
+			&.with-text, 
+			&:focus {
+				top: 10px;
+
+				& + .label {
+					top: -80%;
+					bottom: -20%;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

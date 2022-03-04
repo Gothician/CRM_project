@@ -3,6 +3,7 @@ require('dotenv').config();
 const pkg = require('./package.json');
 
 module.exports = {
+    srcDir: 'src/',
     ssr: false,
     server: {
         port: process.env.PORT
@@ -35,7 +36,7 @@ module.exports = {
     ** Customize the progress-bar color
     */
     loading: {
-        color: '#F15A24',
+        color: '#1AA79C',
         height: '3px',
         continuous: true
     },
@@ -44,7 +45,6 @@ module.exports = {
     ** Global CSS
     */
     css: [
-        '@fortawesome/fontawesome-svg-core/styles.css',
         '@/assets/scss/general'
     ],
 
@@ -52,12 +52,17 @@ module.exports = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        { src: '~/plugins/local-storage.js', ssr: false },
-        { src: '~/plugins/vee-validate.js', ssr: false },
-        { src: '~/plugins/axios.js', ssr: false },
-        { src: '~/plugins/fontawesome.js', ssr: false },
-        { src: '~/plugins/route', ssr: false }
+        { src: '@/plugins/local-storage.js', ssr: false },
+        { src: '@/plugins/vee-validate.js', ssr: false },
+        { src: '@/plugins/axios.js', ssr: false },
+        { src: '@/plugins/route', ssr: false }
     ],
+    fontawesome: {
+        icons:{
+            solid:true,
+            brands:true
+        }
+    },
     /*
     ** Nuxt.js modules
     */
@@ -70,7 +75,41 @@ module.exports = {
         '@nuxtjs/moment',
         '@nuxtjs/composition-api/module',
         'bootstrap-vue/nuxt',
-        'vue2-editor/nuxt'
+        'vue2-editor/nuxt',
+        [
+            'nuxt-i18n',
+            {
+                detectBrowserLanguage: {
+                    useCookie: true,
+                    cookieKey: 'i18n_redirected',
+                    alwaysRedirect: false,
+                    fallbackLocale: 'ru'
+                  },
+                locales: [
+                  {
+                    name: 'Русский',
+                    code: 'ru',
+                    iso: 'rus-RU',
+                    file: 'rus-RU.js'
+                  },
+                  {
+                    name: 'Українська',
+                    code: 'ua',
+                    iso: 'uk-UA',
+                    file: 'uk-UA.js'
+                  },
+                  {
+                    name: 'English',
+                    code: 'en',
+                    iso: 'en-US',
+                    file: 'en-US.js'
+                  }
+                ],
+                lazy: true,
+                langDir: 'lang/',
+                defaultLocale: 'ru'
+            }
+        ]
     ],
     bootstrapVue: {
         bootstrapCSS: false // Or `css: false`
@@ -159,7 +198,14 @@ module.exports = {
         transpile: ['vee-validate/dist/rules']
     },
     buildModules: [
+        '@nuxtjs/fontawesome'
     ],
+    fontawesome: {
+        icons: {
+            solid: true,
+            brands: true
+        }
+    },
     render: {
         http2: {
             push: true

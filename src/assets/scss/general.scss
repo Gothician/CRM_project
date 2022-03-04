@@ -1,0 +1,26 @@
+@import '_variables';
+@import 'mixins/backgrounds';
+@import 'bootstrap/scss/bootstrap';
+@import '_bootstrap-reset';
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+@import 'pages/login';
+.uh__crm-wrapper {
+    background: $body-bg-color;
+    min-height: 100vh;
+    padding-top: 108px;
+    padding-left: 304px;
+    padding-right: 24px;
+    padding-bottom: 24px;
+    position: relative;
+
+    @import "./common/common";
+    @import "./components/components";
+}

@@ -1,0 +1,99 @@
+.aside__crm-menu {
+    position: fixed;
+    left: 0;
+    top: 96px;
+    bottom: 0;
+    width: 280px;
+    background: $aside-menu__wrapper-bg;
+    border-right: 1px solid $aside-menu__wrapper-border_bottom_color;
+    padding: 24px 12px;
+    overflow: auto;
+    box-shadow: inset 0px 0px 6px -3px rgba(0,0,0,.24);
+
+    a {
+        text-decoration: none;
+    }
+
+    &-wrapper {
+        .item {
+            .single-link,
+            .links-group {
+                width: 100%;
+                font-size: 14px;
+                height: 36px;
+                line-height: 36px;
+                cursor: default;
+                color: $aside-menu__wrapper_cat_text_color;
+                margin: 0px -12px;
+                width: calc(100% + 24px);
+                padding: 2px 12px 0px;
+
+                & > svg {
+                    color: $aside-menu__icons-color;
+                    display: block;
+                    font-size: 18px;
+                    margin-right: 8px;
+                    margin-top: -2px;
+                }
+
+                &.active {
+                    @include bg-default-gradient($aside-menu__active_link_color, $aside-menu__active_link_second_color);
+                    color: $white;
+                }
+            }
+
+            .single-link {
+                cursor: pointer;
+
+                &:not(.active) {
+                    &:hover {
+                        @include bg-default-gradient($aside-menu__active_link_color, $aside-menu__active_link_second_color);
+                        color: $white;
+
+                        & > svg {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+
+            .links-list {
+                margin: 8px -12px 16px;
+
+                .sub-item {
+                    padding-left: 48px;
+                    font-size:13px;
+                    display: block;
+                    width: 100%;
+                    margin: 0px 0px;
+                    height: 36px;
+                    line-height: 36px;
+                    cursor: pointer;
+                    color: $aside-menu__wrapper_cat_text_color;
+
+                    &.active {
+                        color: $aside-menu__active_link_color;
+                        background: lighten($aside-menu__icons-color, 10%);
+                        position: relative;
+
+                        &::before {
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            display: inline-block;
+                            margin-right: 12px;
+                            @include bg-default-gradient($aside-menu__active_link_color, $aside-menu__active_link_second_color);
+                        }
+                    }
+
+                    &:not(.active) {
+                        &:hover {
+                            background: lighten($aside-menu__icons-color, 8%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
