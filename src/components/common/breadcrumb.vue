@@ -31,7 +31,7 @@
             // Formatting the list of categories
             category() {
                 let category = this.categoryData(this.$route.name, true);
-
+                if(!category) return null
                 return {
                     key: category.key,
                     icon: category.icon

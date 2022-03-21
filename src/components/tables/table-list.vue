@@ -41,8 +41,8 @@
                                 b-button(variant="danger")
                                     font-awesome-icon(:icon="['fas', 'trash']", :id="`tooltip-remove-${item.id}`")
                                     b-tooltip(:target="`tooltip-remove-${item.id}`", triggers="hover", variant="info") Remove item
-                                //- Edit btn
-                                b-button(variant="success")
+                                //- Edit btn //  "`/wearhouse/contractor/${item.id}`"
+                                b-button(variant="success", :to="{ name: `wearhouse-contractor-id___${$i18n.locale}`, params: { id: item.id}}")
                                     font-awesome-icon(:icon="['fas', 'pen']", :id="`tooltip-edit-${item.id}`")
                                     b-tooltip(:target="`tooltip-edit-${item.id}`", triggers="hover", variant="info") Edit item
                                 //- View btn
