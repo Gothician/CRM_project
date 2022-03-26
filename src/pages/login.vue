@@ -49,7 +49,9 @@
                 form: {
                     email: null,
                     password: null,
-                    remember_me: true
+                    remember_me: true,
+                    client_id: 3,
+                    client_secret: 'y1XjoJUj9cqFBo8ucmBPdF0Pfvgny5nQUxfqnCU4'
                 },
                 showResetPass: false
             }
@@ -86,6 +88,9 @@
                     });
                 }
             }
+        },
+        mounted() {
+            console.log(this.$route.name)
         }
     }
 </script>

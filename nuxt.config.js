@@ -24,7 +24,7 @@ module.exports = {
             { hid: 'description', name: 'description', content: pkg.description }
         ],
         link: [
-            { rel: 'dns-prefetch', href: `${ process.env.BASE_API_URL }/api` },
+            { rel: 'dns-prefetch', href: `${ process.env.BASE_URL }/api` },
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
             { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
             { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
@@ -118,7 +118,7 @@ module.exports = {
     ** Axios module configuration
     */
     axios: {
-        baseURL: `${ process.env.BASE_API_URL }/api`,
+        baseURL: `${ process.env.BASE_URL }/api`,
         // proxyHeaders: false,
         credentials: false,
         proxy: true,
@@ -130,25 +130,25 @@ module.exports = {
 
     proxy: {
         '/api/': {
-            target: `${ process.env.BASE_API_URL }/api`,
+            target: `${ process.env.BASE_URL }/api`,
             pathRewrite: {
                 '^/api': ''
             }
         },
         '/auth/': {
-            target: `${ process.env.BASE_API_URL }/api/auth`,
+            target: `${ process.env.BASE_URL }/api/auth`,
             pathRewrite: {
                 '^/auth': ''
             }
         },
         '/media/': {
-            target: `${ process.env.BASE_API_URL }/api`
+            target: `${ process.env.BASE_URL }/api`
         }
     },
     auth: {
         strategies: {
             local: {
-                scheme: 'refresh',
+                scheme: 'local',
                 token: {
                     property: 'token',
                     global: true,
@@ -162,17 +162,17 @@ module.exports = {
                 refreshToken: {
                   property: 'refresh_token',
                   data: 'refresh_token',
-                  tokenRequired: true
+                  tokenRequired: false
                 },
                 endpoints: {
-                    login: { url: '/auth/signin', method: 'post' },
-                    logout: { url: '/auth/signout', method: 'post' },
+                    login: { url: '/auth/login', method: 'post' },
+                    logout: { url: '/auth/logout', method: 'post' },
                     refresh: { url: '/auth/refresh', method: 'post' },
                     user: { url: '/auth/profile', method: 'get' }
                 }
             }
         },
-        redirect: false,
+        redirect: true,
         localStorage: false
     },
 

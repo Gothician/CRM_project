@@ -32,10 +32,14 @@
             category() {
                 let category = this.categoryData(this.$route.name, true);
 
-                return {
-                    key: category.key,
-                    icon: category.icon
-                }
+                if(!category) {
+                    return null
+                } else {
+                    return {
+                        key: category.key,
+                        icon: category.icon
+                    }
+                } 
             },
 
             // Formatting the list of sub categories
