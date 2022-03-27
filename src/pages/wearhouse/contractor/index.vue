@@ -5,7 +5,8 @@
                     :items="items",
                     :filters="filters",
                     :search="true",
-                    @search="filtersSearch")
+                    @search="filtersSearch",
+                    editLink="wearhouse-contractor-id")
 </template>
 
 <script>

@@ -19,7 +19,8 @@
                     :items="items",
                     :filters="filters",
                     :search="true",
-                    @search="filtersSearch")
+                    @search="filtersSearch",
+                    editLink="wearhouse-contractor-collaborator-id")
 </template>
 
 <script>
@@ -49,8 +50,16 @@
                 },
                 filters: [
                     {
-                        key: 'company_name',
+                        key: 'first_name',
                         type: 'text'
+                    },
+                    {
+                        key: 'last_name',
+                        type: 'text'
+                    },
+                    {
+                        key: 'birthday',
+                        type: 'date'
                     },
                     {
                         key: 'address',
@@ -61,57 +70,78 @@
                         type: 'checkbox'
                     },
                     {
-                        key: 'website',
+                        key: 'contractor_id',
+                        type: 'text'
+                    },
+                    {
+                        key: 'role',
                         type: 'text'
                     }
                 ],
                 items: [
                     {
                         id: 1,
-                        name: 'Big Opt',
-                        description: 'desc',
-                        address: 'г. Киев',
-                        website: '',
-                        logo: null,
+                        first_name: 'Pavlo',
+                        last_name: 'Uhrinovich',
+                        birthday: '12.08.1992',
+                        address: 'г. Харьков',
+                        contacts: {
+                            email: 'pavlo@uhrinovich.com',
+                            phone: null,
+                            viber: null,
+                            telegram: null,
+                            skype: null
+                        },
+                        description: null,
+                        role: null,
+                        photo_id: null,
+                        contractor_id: null,
                         status: true
                     },
                     {
                         id: 2,
-                        name: 'Mini Opt',
-                        description: '',
-                        address: 'г. Харьков',
-                        website: 'https://www.google.ua',
-                        logo: {
-                            link: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Ruby_logo.png',
-                            id: 1223
+                        first_name: 'Alexander',
+                        last_name: 'Tetero',
+                        birthday: '28.11.1979',
+                        address: 'г. Кременчуг',
+                        contacts: {
+                            email: 'alex@tetero.com',
+                            phone: null,
+                            viber: null,
+                            telegram: null,
+                            skype: null
                         },
-                        status: false
+                        description: null,
+                        role: null,
+                        photo_id: null,
+                        contractor_id: null,
+                        status: true
                     }
                 ],
                 fields: [
                     {
-                        key: 'logo',
-                        label: this.$t('forms.fields.logo'),
-                        sortable: false
-                    },
-                    {
-                        key: 'name',
-                        label: this.$t('forms.fields.company_name'),
+                        key: 'last_name',
+                        label: 'Last Name',//this.$t('forms.fields.logo'),
                         sortable: true
                     },
                     {
-                        key: 'website',
-                        label: this.$t('forms.fields.website'),
-                        sortable: false
+                        key: 'first_name',
+                        label: 'First Name',// this.$t('forms.fields.company_name'),
+                        sortable: true
                     },
+                    // {
+                    //     key: 'website',
+                    //     label: this.$t('forms.fields.website'),
+                    //     sortable: false
+                    // },
                     {
                         key: 'address',
-                        label: this.$t('forms.fields.address'),
+                        label: 'Address',// this.$t('forms.fields.address'),
                         sortable: false
                     },
                     {
                         key: 'status',
-                        label: this.$t('forms.fields.status'),
+                        label: 'Status',// this.$t('forms.fields.status'),
                         sortable: false
                     }
                 ]
